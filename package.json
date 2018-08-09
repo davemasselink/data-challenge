@@ -1,0 +1,58 @@
+{
+  "name": "data-challenge",
+  "version": "1.0.0",
+  "description": "data challenge",
+  "private": true,
+  "babel": {
+    "presets": [
+      "env",
+      "react",
+      "stage-2"
+    ]
+  },
+  "dependencies": {
+  },
+  "scripts": {
+    "test": "echo 'Error: no test specified' && exit 1",
+    "start": "npx webpack && node server/main.js",
+    "build": "npx webpack",
+    "serve": "node server/main.js"
+  },
+  "author": "David Masselink",
+  "license": "MIT",
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true,
+        "arrowFunctions": true,
+        "templateStrings": true
+      }
+    },
+    "rules": {
+      "semi": 2
+    },
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true,
+      "amd": true
+    }
+  },
+  "devDependencies": {
+    "@material-ui/core": "^1.4.1",
+    "@material-ui/icons": "^2.0.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "prop-types": "^15.6.2",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-router-dom": "^4.2.2",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.5"
+  }
+}
