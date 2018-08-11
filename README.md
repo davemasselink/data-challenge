@@ -2,6 +2,13 @@ data-challenge
 ================
 data challenge for Caleb
 
+F/E to visualize specified dataset using:
+* nodejs
+* reactjs
+* material-ui
+* google maps
+* highcharts
+
 Installation and Run
 --------------------
 If you've got a modestly well setup nodeJS and npm environment (with both accessible via $PATH), getting this project installed and running should be pretty straight-forward.
