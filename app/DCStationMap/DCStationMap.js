@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
-
 import Divider from '@material-ui/core/Divider';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import {withStyles} from "@material-ui/core/styles/index";
+
+import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 import {GMAPS_API_KEY} from '../constants.js';
 
@@ -15,7 +15,7 @@ const styles = {
   card: {},
   map: {
     width: '46%',
-    height: '50%'
+    height: '43%'
   },
   mapContainer: {
     height: '460px'
