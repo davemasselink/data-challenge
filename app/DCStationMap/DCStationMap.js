@@ -11,40 +11,60 @@ import {withStyles} from "@material-ui/core/styles/index";
 
 import {GMAPS_API_KEY} from '../constants.js';
 
-const style = {
-  width: '50vw',
-  height: '75vh'
-};//style={style}
-
 const styles = {
-  card: {}
+  card: {},
+  map: {
+    width: '46%',
+    height: '50%'
+  },
+  mapContainer: {
+    height: '460px'
+  }
+
 };
 
 export class DCStationMap extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {};
   }
-//
+
   render() {
+    let bounds = new this.props.google.maps.LatLngBounds();
+    let points = [];
+    for(let i = 0; i < this.props.stations.length; i++){
+      let val = this.props.stations[i];
+      let lat = val.location.coordinates[1];
+      let lng = val.location.coordinates[0];
+      bounds.extend({lat, lng});
+      points.push({lat, lng});
+    }
+
     return (
       <Card>
         <CardHeader title="Station Map"/>
         <Divider/>
         <CardContent>
-          <Map item
-            google={this.props.google}
-
-            zoom={10}>
-            {this.props.stations.map((val,idx) => {
-              return (
-              <Marker key={idx} name={val.name}
-                title={val.name + '\n' + val.street_address + '\n' + val.city + ', ' + val.state + ' ' + val.zip_code}
-                position={{lat: val.location.coordinates[1], lng: val.location.coordinates[0]}} />
-              )
-            })}
-          </Map>
+          <div className="box box-default" style={styles.mapContainer}>
+            <div className="box-body">
+              <div className="row">
+                <Map google={this.props.google}
+                  style={styles.map}
+                  zoom={2}
+                  initialCenter={{
+                    lat: 37.752450,
+                    lng: -122.408087
+                  }}
+                  bounds={bounds}>
+                  {points.map((pt,idx) => {
+                    return (
+                    <Marker key={idx}
+                      position={pt} /> )
+                  })}
+                </Map>
+              </div>
+            </div>
+          </div>
         </CardContent>
       </Card>
     );

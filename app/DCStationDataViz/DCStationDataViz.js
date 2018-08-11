@@ -18,23 +18,10 @@ class DCStationDataViz extends React.Component {
   constructor(props) {
     super(props);
     this.classes = props.classes;
-
-    this.state = {
-      stations: [],
-      //data: options.series.data,
-      data: props.stations,
-      page: 0,
-      rowsPerPage: 5,
-      dialogOpen: false
-    };
-  }
-
-  componentDidMount() {
   }
 
   render() {
-    //process data
-    // walk while counting status values
+    //count each enum across each station's status
     let active = 0;
     let needsService = 0;
     let underConstruction = 0;
@@ -63,7 +50,7 @@ class DCStationDataViz extends React.Component {
         type: 'pie'
       },
       title: {
-        text: 'Status Breakdown for Selected Stations'
+        text: 'Statuses of Filtered Stations'
       },
       series: [{
         data: seriesData

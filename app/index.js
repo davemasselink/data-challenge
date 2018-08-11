@@ -6,7 +6,7 @@ import { MuiThemeProvider, withStyles, withTheme, createMuiTheme } from '@materi
 import blue from '@material-ui/core/colors/blue';
 
 import DCMenu from './DCMenu/DCMenu.js';
-import DCColumnView from './DCColumnView/DCColumnView.js';
+import DCStationTable from './DCStationTable/DCStationTable.js';
 
 const title = 'DataChallenge';
 
@@ -26,7 +26,7 @@ class DCApp extends React.Component {
       <div>
         <MuiThemeProvider theme={theme}>
           <DCMenu title={title} classes={styles.menu}/>
-          <DCColumnView/>
+          <DCStationTable/>
         </MuiThemeProvider>
       </div>
     );
